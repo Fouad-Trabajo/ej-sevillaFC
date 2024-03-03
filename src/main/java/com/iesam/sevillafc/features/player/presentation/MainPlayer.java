@@ -24,7 +24,7 @@ public class MainPlayer {
         System.out.println(player.toString());
     }
 
-    public static void getPlayer(){
+    public static void getPlayers(){
         GetPlayersUseCase getPlayersUseCase = new GetPlayersUseCase(PlayerDataRepository.newInstance());
         ArrayList<Player> players =getPlayersUseCase.execute();
         System.out.println(players.toString());

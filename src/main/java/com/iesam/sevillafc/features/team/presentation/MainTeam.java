@@ -7,7 +7,7 @@ import com.iesam.sevillafc.features.team.domain.usecases.GetTeamUseCase;
 
 public class MainTeam {
 
-    public static void CreateTeam(Team team){
+    public static void createTeam(Team team){
         TeamDataRepository teamDataRepository= TeamDataRepository.newInstance();
         CreateTeamUseCase createTeamUseCase= new CreateTeamUseCase(teamDataRepository);
         createTeamUseCase.execute(team);

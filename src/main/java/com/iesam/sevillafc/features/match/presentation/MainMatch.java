@@ -7,15 +7,15 @@ import com.iesam.sevillafc.features.match.domain.usecases.GetMatchUseCase;
 
 public class MainMatch {
 
-    public void createMatch(Match match) {
+    public static void createMatch(Match match) {
         MatchDataRepository matchDataRepository = MatchDataRepository.newInstance();
-        CreateMatchUseCase createMatchUseCase= new CreateMatchUseCase(matchDataRepository);
+        CreateMatchUseCase createMatchUseCase = new CreateMatchUseCase(matchDataRepository);
         createMatchUseCase.execute(match);
     }
 
-    public void obtainMatch(String id) {
-        GetMatchUseCase getMatchUseCase= new GetMatchUseCase(MatchDataRepository.newInstance());
-        Match match= getMatchUseCase.execute(id);
+    public static void obtainMatch(String id) {
+        GetMatchUseCase getMatchUseCase = new GetMatchUseCase(MatchDataRepository.newInstance());
+        Match match = getMatchUseCase.execute(id);
         System.out.println(match.toString());
 
     }
