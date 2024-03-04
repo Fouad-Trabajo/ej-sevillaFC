@@ -18,6 +18,7 @@ public class PlayerDataRepository implements PlayerRepository {
     public static PlayerDataRepository newInstance() {
         if (instane == null) {
             instane = new PlayerDataRepository();
+            fileLocalDataSourcePlayer= new FileLocalDataSourcePlayer();
         }
         return instane;
     }

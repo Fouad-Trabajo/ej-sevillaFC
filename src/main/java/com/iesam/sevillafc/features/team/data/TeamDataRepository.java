@@ -6,6 +6,9 @@ import com.iesam.sevillafc.features.team.domain.models.Team;
 
 public class TeamDataRepository implements TeamRepository {
 
+    //Instancia de fichero
+    private static FileLocalDataSourceTeam fileLocalDataSourceTeam;
+
     //Instancia de patrón SinleTon
     private static  TeamDataRepository instance=null;
 
@@ -13,12 +16,12 @@ public class TeamDataRepository implements TeamRepository {
     public static TeamDataRepository newInstance(){
         if(instance==null){
             instance= new TeamDataRepository();
+            fileLocalDataSourceTeam=new FileLocalDataSourceTeam();
         }
         return instance;
     }
 
-    //Instancia de fichero
-    private static FileLocalDataSourceTeam fileLocalDataSourceTeam;
+
     @Override
     public void createTeam(Team team) {
         fileLocalDataSourceTeam.save(team);

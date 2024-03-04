@@ -16,6 +16,7 @@ public class MatchDataRepository implements MatchRepository {
     public static MatchDataRepository newInstance(){
         if(instance==null){
             instance= new MatchDataRepository();
+            fileLocalDataSourceMatch= new FileLocalDataSourceMatch();
         }
         return instance;
     }
